@@ -27,5 +27,9 @@ window.Mezon.WebView.onEvent('PONG', () => {
 });
 
 setupCounter(document.querySelector('#counter'), (counter) => {
-  window.Mezon.WebView.postEvent('COUNTER', { counter });
+  window.Mezon.WebView.postEvent('JOIN_CHANNEL', { counter });
+});
+
+window.Mezon.WebView.onEvent('JOIN_CHANNEL', () => {
+  console.log('Join Channel!');
 });
